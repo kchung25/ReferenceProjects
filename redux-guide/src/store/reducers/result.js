@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/actions';
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     results: []
@@ -8,6 +8,7 @@ const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.STORE_RESULT:
             return {
+                //Update data in reducer before storing it
                 ...state,
                 results: state.results.concat({id: new Date(), val: action.result})
             }
